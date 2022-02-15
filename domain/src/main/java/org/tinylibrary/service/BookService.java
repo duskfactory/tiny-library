@@ -30,7 +30,7 @@ public class BookService implements BookServicePort {
     }
 
     @Override
-    public BookDto updateStatus(BookDto.Status status) {
+    public BookDto updateStatus(String status) {
         return bookPersistencePort.updateStatus(status);
     }
 
@@ -45,7 +45,7 @@ public class BookService implements BookServicePort {
     }
 
     @Override
-    public List<BookDto> getBooksByStatus(BookDto.Status status) {
+    public List<BookDto> getBooksByStatus(String status) {
         return bookPersistencePort.getBooksByStatus(status);
     }
 }

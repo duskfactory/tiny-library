@@ -11,13 +11,7 @@ import java.util.List;
 public class BookDto {
     @NonNull private Long id;
     @NonNull private String title;
-    @NonNull private Status status;
+    @NonNull private String status;
     private String remark;
     private List<PatronDto> requests;
-
-    public enum Status {
-        Available,
-        ToOrder,
-        Lent
-    }
 }

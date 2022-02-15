@@ -8,8 +8,8 @@ public interface BookPersistencePort {
     BookDto addBook(BookDto book);
     void deleteBookById(Long id);
     BookDto updateRemark(String remark);
-    BookDto updateStatus(BookDto.Status status);
+    BookDto updateStatus(String status);
     BookDto getBookById(Long id);
     List<BookDto> getAllBooks();
-    List<BookDto> getBooksByStatus(BookDto.Status status);
+    List<BookDto> getBooksByStatus(String status);
 }
