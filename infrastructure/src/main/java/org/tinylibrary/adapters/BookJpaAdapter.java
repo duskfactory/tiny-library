@@ -1,18 +1,15 @@
 package org.tinylibrary.adapters;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.tinylibrary.data.BookDto;
-import org.tinylibrary.data.PatronDto;
-import org.tinylibrary.entity.Book;
 import org.tinylibrary.mappers.BookMapper;
 import org.tinylibrary.ports.spi.BookPersistencePort;
 import org.tinylibrary.repository.BookRepository;
 
 import java.util.List;
-import java.util.Optional;
 
-@Service
+@Component
 public class BookJpaAdapter implements BookPersistencePort {
 
     @Autowired
@@ -20,8 +17,8 @@ public class BookJpaAdapter implements BookPersistencePort {
 
     @Override
     public BookDto addBook(BookDto bookDto) {
-        Book book = BookMapper.INSTANCE.bookDtoToBook(bookDto);
-        Book bookSaved = bookRepository.save(book);
+        final var book = BookMapper.INSTANCE.bookDtoToBook(bookDto);
+        final var bookSaved = bookRepository.save(book);
         return BookMapper.INSTANCE.bookToBookDto(bookSaved);
     }
 
@@ -31,38 +28,23 @@ public class BookJpaAdapter implements BookPersistencePort {
     }
 
     @Override
-    public BookDto updateRemark(String remark) {
-        return addBook();
-    }
-
-    @Override
-    public BookDto updateStatus(String status) {
-        return addBook();
-    }
-
-    @Override
-    public void addRequest(PatronDto patron) {
-
-    }
-
-    @Override
-    public void removeRequestById(Long patronId) {
-
+    public BookDto updateBook(BookDto book) {
+        return addBook(book);
     }
 
     @Override
     public BookDto getBookById(Long id) {
-        Optional<Book> book = bookRepository.findById(id);
-        return book.map(BookMapper.INSTANCE::bookToBookDto).orElse(null);
+        return bookRepository.findById(id).map(BookMapper.INSTANCE::bookToBookDto).orElse(null);
     }
 
     @Override
     public List<BookDto> getAllBooks() {
-        return null;
+        return BookMapper.INSTANCE.bookListToBookDtoList(bookRepository.findAll());
     }
 
     @Override
     public List<BookDto> getBooksByStatus(String status) {
-        return null;
+        final var bookList = BookMapper.INSTANCE.bookListToBookDtoList(bookRepository.findAll());
+        return bookList.stream().filter(book -> book.status().equals(status)).toList();
     }
 }

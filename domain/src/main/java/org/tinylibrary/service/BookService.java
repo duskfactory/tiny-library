@@ -1,7 +1,6 @@
 package org.tinylibrary.service;
 
 import org.tinylibrary.data.BookDto;
-import org.tinylibrary.data.PatronDto;
 import org.tinylibrary.ports.api.BookServicePort;
 import org.tinylibrary.ports.spi.BookPersistencePort;
 
@@ -26,23 +25,8 @@ public class BookService implements BookServicePort {
     }
 
     @Override
-    public BookDto updateRemark(String remark) {
-        return bookPersistencePort.updateRemark(remark);
-    }
-
-    @Override
-    public BookDto updateStatus(String status) {
-        return bookPersistencePort.updateStatus(status);
-    }
-
-    @Override
-    public void addRequest(PatronDto patron) {
-        bookPersistencePort.addRequest(patron);
-    }
-
-    @Override
-    public void removeRequestById(Long patronId) {
-        bookPersistencePort.removeRequestById(patronId);
+    public BookDto updateBook(BookDto book) {
+        return bookPersistencePort.updateBook(book);
     }
 
     @Override
