@@ -9,6 +9,7 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
+    @Column(columnDefinition = "varchar(255) default 'Available'")
     private String status;
     private String remark;
 }
