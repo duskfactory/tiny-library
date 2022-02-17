@@ -1,4 +1,4 @@
-package org.tinylibrary.entity;
+package org.tinylibrary.infrastructure.entity;
 
 import javax.persistence.*;
 

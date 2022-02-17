@@ -1,10 +1,10 @@
-package org.tinylibrary.ports.spi;
+package org.tinylibrary.domain.ports.api;
 
-import org.tinylibrary.data.BookDto;
+import org.tinylibrary.domain.data.BookDto;
 
 import java.util.List;
 
-public interface BookPersistencePort {
+public interface BookServicePort {
     BookDto addBook(BookDto book);
     void deleteBookById(Long id);
     BookDto updateBook(BookDto book);

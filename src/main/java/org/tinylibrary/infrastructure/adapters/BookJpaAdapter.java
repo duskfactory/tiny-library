@@ -1,11 +1,11 @@
-package org.tinylibrary.adapters;
+package org.tinylibrary.infrastructure.adapters;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.tinylibrary.data.BookDto;
-import org.tinylibrary.mappers.BookMapper;
-import org.tinylibrary.ports.spi.BookPersistencePort;
-import org.tinylibrary.repository.BookRepository;
+import org.tinylibrary.domain.data.BookDto;
+import org.tinylibrary.infrastructure.mappers.BookMapper;
+import org.tinylibrary.domain.ports.spi.BookPersistencePort;
+import org.tinylibrary.infrastructure.repository.BookRepository;
 
 import java.util.List;
 

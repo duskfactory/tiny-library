@@ -1,4 +1,4 @@
-package org.tinylibrary.data;
+package org.tinylibrary.domain.data;
 
 public record BookDto(
     Long id,

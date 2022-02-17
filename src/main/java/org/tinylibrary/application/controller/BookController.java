@@ -1,9 +1,9 @@
-package org.tinylibrary.controller;
+package org.tinylibrary.application.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.tinylibrary.data.BookDto;
-import org.tinylibrary.ports.api.BookServicePort;
+import org.tinylibrary.domain.data.BookDto;
+import org.tinylibrary.domain.ports.api.BookServicePort;
 
 import java.util.List;
 

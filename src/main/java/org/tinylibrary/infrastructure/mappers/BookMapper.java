@@ -1,9 +1,9 @@
-package org.tinylibrary.mappers;
+package org.tinylibrary.infrastructure.mappers;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
-import org.tinylibrary.data.BookDto;
-import org.tinylibrary.entity.Book;
+import org.tinylibrary.domain.data.BookDto;
+import org.tinylibrary.infrastructure.entity.Book;
 
 import java.util.List;
 

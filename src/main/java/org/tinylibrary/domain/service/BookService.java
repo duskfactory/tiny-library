@@ -1,8 +1,8 @@
-package org.tinylibrary.service;
+package org.tinylibrary.domain.service;
 
-import org.tinylibrary.data.BookDto;
-import org.tinylibrary.ports.api.BookServicePort;
-import org.tinylibrary.ports.spi.BookPersistencePort;
+import org.tinylibrary.domain.data.BookDto;
+import org.tinylibrary.domain.ports.api.BookServicePort;
+import org.tinylibrary.domain.ports.spi.BookPersistencePort;
 
 import java.util.List;
 
